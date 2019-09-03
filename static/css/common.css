@@ -126,7 +126,8 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 90%;
+  margin: 0 auto;
   padding-bottom: 2em;
   box-sizing: border-box;
 }
@@ -140,7 +141,7 @@ button {
 #cardList_select>button {
   position: relative;
   display: block;
-  width: 90%;
+  width: 100%;
   background-color: #acacac;
   border-radius: .5em;
   margin: .5em 0;
@@ -153,4 +154,28 @@ button {
 }
 #cardList_select.noadd>button {
   opacity: .5;
+}
+#cardList_select.addHistory::before {
+  content: "history";
+  position: relative;
+  display: block;
+  font-size: .8em;
+  letter-spacing: 0;
+  line-height: 1em;
+  text-align: left;
+  margin-bottom: 1em;
+}
+#cardList_select>hr {
+  display: none;
+}
+#cardList_select.addHistory>hr {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: .5em 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  border-top: 1px solid #797979;
 }
