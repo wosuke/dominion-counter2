@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  color:#494949;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: .1em;
+  line-height:1.6em;
+  background-color: #ececec;
+}
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  border: 4px solid #464646;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+header>ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+}
+header>ul>li {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header>ul>li>h1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:  2rem;
+  height: 2rem;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  background-color: #acacac;
+  border-radius: 50%;
+  margin-right: .5rem;
+}
+header>ul>li>p {
+  letter-spacing: 0;
+  line-height: 1em;
+  margin-left: .5rem;
+}
+#reset {
+  position: relative;
+  display: block;
+  width:  2rem;
+  height: 2rem;
+  background-color: #acacac;
+  background-image:  url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(45,42,38)" d="M446.025,92.206c-40.762-42.394-97.487-69.642-160.383-72.182c-15.791-0.638-29.114,11.648-29.752,27.433c-0.638,15.791,11.648,29.114,27.426,29.76c47.715,1.943,90.45,22.481,121.479,54.681c30.987,32.235,49.956,75.765,49.971,124.011c-0.015,49.481-19.977,94.011-52.383,126.474c-32.462,32.413-76.999,52.368-126.472,52.382c-49.474-0.015-94.025-19.97-126.474-52.382c-32.405-32.463-52.368-76.992-52.382-126.474c0-3.483,0.106-6.938,0.302-10.364l34.091,16.827c3.702,1.824,8.002,1.852,11.35,0.086c3.362-1.788,5.349-5.137,5.264-8.896l-3.362-149.834c-0.114-4.285-2.88-8.357-7.094-10.464c-4.242-2.071-9.166-1.809-12.613,0.738L4.008,182.45c-3.05,2.221-4.498,5.831-3.86,9.577c0.61,3.759,3.249,7.143,6.966,8.974l35.722,17.629c-1.937,12.166-3.018,24.602-3.018,37.279c-0.014,65.102,26.475,124.31,69.153,166.944C151.607,465.525,210.8,492.013,275.91,492c65.095,0.014,124.302-26.475,166.937-69.146c42.678-42.635,69.167-101.842,69.154-166.944C512.014,192.446,486.844,134.565,446.025,92.206z"></path></svg>');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  border-radius: 50%;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 90%;
+  padding-top: 2em;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#cardList_played {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 1em;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  background-color: #acacac;
+}
+#cardList_played>ul {
+  display: table;
+  width: 100%;
+  list-style-type: none;
+}
+#cardList_played>ul>li {
+  display: table-row;
+  counter-increment: table-ol;
+}
+#cardList_played>ul>li::before {
+  content: counter(table-ol) ".";
+  width: 1.5em;
+  display: table-cell;
+  padding-right: .5em;
+}
+#cardList_played>ul>li:not(:last-child)::after {
+  content: "\2193";
+  position: relative;
+  display: block;
+}
+#cardList_played>ul>li:first-child>p {
+  margin-top: 1em;
+}
+#cardList_played>ul>li:last-child>p {
+  margin-bottom: 1em;
+}
+
+#cardList_select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+  box-sizing: border-box;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+#cardList_select>button {
+  position: relative;
+  display: block;
+  width: 90%;
+  background-color: #acacac;
+  border-radius: .5em;
+  margin: .5em 0;
+  padding: 1.4em 0 1.4em 1em;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 1em;
+  opacity: 1;
+  transition: opacity .4s;
+}
+#cardList_select.noadd>button {
+  opacity: .5;
+}
