@@ -63,6 +63,7 @@ function playAction(e) {
   tag_m[0].scrollTop = 0;
 
   if( userCount.action == 0 ) lst_s.classList.add('noadd');
+  if( !lst_s.classList.contains('addHistory') ) lst_s.classList.add('addHistory');
 }
 
 function update_userCount() {
